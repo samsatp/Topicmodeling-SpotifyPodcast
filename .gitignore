@@ -1,1 +1,3 @@
-spotify-secret.txt
+*.csv
+*.txt
+models/*
