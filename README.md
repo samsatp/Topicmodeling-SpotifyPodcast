@@ -12,8 +12,8 @@ Once the models are done, the API will be created and deployed to serve models a
     - **Getting data from Spotify API** ✅
       - Ingest data into `.json`  then tabulate into `.csv`
       - Artifact : 
-        1. `included.txt` : log for raw data that is in conditions$^{[1]}$
-        2. `excluded.txt` : log for raw data that is not in conditions$^{[1]}$
+        1. `included.txt` : log for raw data that is in conditions
+        2. `excluded.txt` : log for raw data that is not in conditions 
         3. `failed_ep_query.txt` : log for failed API calls
         4. `total_df.csv` : resulting table containing infomation useful for analysis
     - **Cleansing data** ✅
@@ -49,6 +49,6 @@ Once the models are done, the API will be created and deployed to serve models a
 5. **Orchestraion(K8)**
     - ...
     
-
-
+## 📍 Acknowledgement
+- All the datasets, log files, and models are not included in this repository.
 
