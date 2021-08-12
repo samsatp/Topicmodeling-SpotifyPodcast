@@ -1,10 +1,10 @@
-# all datasets
+# datasets
 *.csv
 
-#pycache
+# pycache
 __pycache__
 
-# all log files
+# log files
 backend/notebooks/*/*.txt
 
 # models

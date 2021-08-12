@@ -7,6 +7,10 @@ In this project, I use approximately ten-thousand descriptions of podcasts broad
 
 Once the models are done, the API will be created and deployed to serve models as a service. Then I create a simple web interface for user to interact with models. After that, the web interface will be deployed to public.
 
+## 📘 Todos
+- **Mask out timestamps**: a lot of descriptions contain timestamp so it's not make sense to tokenize these timestamp. Should we mask them as `[TIME]` or `[UNK]` ?.
+  
+  
 ## 📑 Action plan
 1. **Preparing data**
     - **Getting data from Spotify API** ✅
@@ -29,7 +33,7 @@ Once the models are done, the API will be created and deployed to serve models a
         |:-------------:|:---------------------------------:|:------:|:----------------:|
         |    Baseline   |         Sklearn estimators        |    ✅   |        50%       |
         | Deep Learning |   Sequential's Tensorflow model   |    ✅   |        70%       |
-        |  Transformer  | Fine tune pre-trained HuggingFace |    ✅   |        80%       |
+        |  Transformer  | Fine tune pre-trained HuggingFace |    ✅   |        85%       |
     - With text preprocessing 🔜
 3. **Create backend API** to serve ML as a service
     - **FastAPI**
