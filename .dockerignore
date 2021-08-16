@@ -1,0 +1,4 @@
+svenv
+backend/data/*.csv
+backend/notebooks
+*md

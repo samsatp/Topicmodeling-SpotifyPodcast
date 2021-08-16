@@ -3,12 +3,12 @@
 This project uses Natural Language Processing and Machine Learning methods to achieve multi-class classification problem. 
 
 ## 🔑 Method
-In this project, I use approximately ten-thousand descriptions of podcasts broadcasting in *Spotify* which are obtained by API. Together with their associated label, the data is used to trained the models to classify the label from text. All the labels are pre-defined by me, currently 10 classes, including `["machine learning", "cooking", "crime", "politics", "kid", "comedy", "sport", "culture", "lifestyle", "business"]`.
+In this project, I use approximately ten-thousand descriptions of podcasts broadcasting in *Spotify* which are obtained by API. Together with their associated label acquired from Spotify's search engine API, the data is used to trained the models to classify the label from text. All the labels are pre-defined by me, currently 10 classes, including `["machine learning", "cooking", "crime", "politics", "kid", "comedy", "sport", "culture", "lifestyle", "business"]`.
 
 Once the models are done, the API will be created and deployed to serve models as a service. Then I create a simple web interface for user to interact with models. After that, the web interface will be deployed to public.
 
-## 📘 Todos
-- **Mask out timestamps**: a lot of descriptions contain timestamp so it's not make sense to tokenize these timestamp. Should we mask them as `[TIME]` or `[UNK]` ?.
+## 📘 Notes
+- **Mask out timestamps**: a lot of descriptions contain timestamps so it's not make sense to tokenize these timestamps. Should we mask them as `[TIME]` or `[UNK]` ?.
   
   
 ## 📑 Action plan
@@ -35,24 +35,29 @@ Once the models are done, the API will be created and deployed to serve models a
         | Deep Learning |   Sequential's Tensorflow model   |    ✅   |        70%       |
         |  Transformer  | Fine tune pre-trained HuggingFace |    ✅   |        85%       |
     - With text preprocessing 🔜
-3. **Create backend API** to serve ML as a service
-    - **FastAPI**
-      - Recieve a sentence and return predicted probabilities of each class 🔛
-      - ...
-    - **Automated testing**
-      - ...
+3. **Create backend API** to serve `model_2` and `pre-trained` as a service (using *FastAPI*)
+    - **APIs** 
+      - Recieve a sentence and return predicted probabilities of each class ✅
+    - **Testing** 
+      - Tested usability with Postman ✅
+      - Automated testing 🔜
     - **Deploy backend** as Microservice
-      - ...
-    - ...
+      - Build Docker image ✅
+      - Deploy on GKE 🔜
 
 4. **Create web frontend** as a user's interface to API
-    - **Deploy web interface**
-      - ...
-    - ...
+    - For web interface, it will be created in another project as I intended to build this project in the Microservice style. Below is a list of user interfaces I planned to create while trying to use various framework 
+      - Web interface using *Dash*🔜: [..url]() 
+      - Web interface using *Stramlit*🔜: [..url]()
+      - Application using *Tkinter*🔜: [..url]()
 
-5. **Orchestraion(K8)**
-    - ...
     
 ## 📍 Acknowledgement
-- All the datasets, log files, and models are not included in this repository.
+- All the datasets, log files, and models are not included in this repository because of their sizes.
+- The data used in this project is heavily rely on Spotify search API which is, In my opinion, quite reliable.
 
+## 📈 Further improvement
+- In this project, I used around 10k datapoints which is not to much for NLP problems. So, the main improvement I can think of is to query more data.
+- In addition to query more data only from Spotify, we could use data from other sources as well. Doing so will hopefully improve models' generalizability. 
+- We could expand the target classes by acquring more data to make models be able to classify whichever topic we want. In this project, I used 10 topics mentioned above because they're general and easy to think of.
+- We could try fine-tunnig other pre-trained models. I selected *Distilled BERT* because it's lightweight.

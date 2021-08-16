@@ -1,0 +1,8 @@
+version: '3'
+services: 
+  web:
+    build: 
+      context: .
+    image: topicmo:1.0
+    ports: 
+      - 54322:80
