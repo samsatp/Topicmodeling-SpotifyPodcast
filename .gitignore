@@ -1,3 +1,15 @@
+# datasets
 *.csv
-*.txt
-models/*
+
+# pycache
+__pycache__
+
+# log files
+backend/notebooks/*/*.txt
+
+# models
+backend/models/*
+!backend/models/__init__.py
+
+# virtual env
+svenv
