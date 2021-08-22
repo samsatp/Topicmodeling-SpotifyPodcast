@@ -5,7 +5,8 @@ This project uses Natural Language Processing and Machine Learning methods to ac
 ## 🔑 Method
 In this project, I use approximately ten-thousand descriptions of podcasts broadcasting in *Spotify* which are obtained by API. Together with their associated label acquired from Spotify's search engine API, the data is used to trained the models to classify the label from text. All the labels are pre-defined by me, currently 10 classes, including `["machine learning", "cooking", "crime", "politics", "kid", "comedy", "sport", "culture", "lifestyle", "business"]`.
 
-Once the models are done, the API will be created and deployed to serve models as a service. Then I create a simple web interface for user to interact with models. After that, the web interface will be deployed to public.
+Once the models are done, the API will be created and deployed to serve models as a service. Then I create a simple web interface for user to interact with models. After that, the web interface will be deployed to public. Figure below depicts workflow and architecture of this project.
+![topic-modelling-workflow](blueprint-topicmo.png)
 
 ## 📘 Notes
 - **Mask out timestamps**: a lot of descriptions contain timestamps so it's not make sense to tokenize these timestamps. Should we mask them as `[TIME]` or `[UNK]` ?.
@@ -29,7 +30,7 @@ Once the models are done, the API will be created and deployed to serve models a
       - Does preprocessing the text can improve the model's performance ?
 2. **Building model**
     - Without text preprocessing
-        |     Model     |               Method              | Status | Overall accuracy |
+        |     Model     |               Method              | Status | Overall accuracy on test data|
         |:-------------:|:---------------------------------:|:------:|:----------------:|
         |    Baseline   |         Sklearn estimators        |    ✅   |        50%       |
         | Deep Learning |   Sequential's Tensorflow model   |    ✅   |        70%       |
@@ -43,13 +44,12 @@ Once the models are done, the API will be created and deployed to serve models a
       - Automated testing 🔜
     - **Deploy backend** as Microservice
       - Build Docker image ✅
-      - Deploy on GKE 🔜
+      - Deploy on Google Kubernetes Engine ✅
 
 4. **Create web frontend** as a user's interface to API
-    - For web interface, it will be created in another project as I intended to build this project in the Microservice style. Below is a list of user interfaces I planned to create while trying to use various framework 
-      - Web interface using *Dash*🔜: [..url]() 
-      - Web interface using *Stramlit*🔜: [..url]()
-      - Application using *Tkinter*🔜: [..url]()
+    - For web interface, it will be created in another project as I intended to build this project in the Microservice style. 
+      - Web interface using *Dash* deployed on Heroku✅: https://topicmodelling-dash.herokuapp.com/
+
 
     
 ## 📍 Acknowledgement
