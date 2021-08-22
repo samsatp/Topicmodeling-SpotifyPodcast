@@ -1,5 +1,5 @@
 fastapi[all]
-tensorflow==2.5.0
+tensorflow-cpu==2.5.0
 transformers==4.9.2
 numpy
 pandas

@@ -22,12 +22,12 @@ class Query(BaseModel):
     
 app = FastAPI()
 
-@app.get("/")
+@app.get("/topicmodelling")
 def root():
     welcome_text = "Welcome 👋, this is Topicmodelling API"
     return welcome_text
 
-@app.get("/prediction/{model}")
+@app.get("/topicmodelling/prediction/{model}")
 def get_prediction(
     model:modelName,
     query:Query,
